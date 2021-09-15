@@ -28,6 +28,7 @@ const showBeers = () =>{
             <div key={i}>
                 <h1>{eachBeer.name}</h1>
                 <img src={eachBeer.image_url} width='100px'/>
+                <p>{eachBeer.description}</p>
             </div>
         )
     })
