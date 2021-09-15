@@ -14,9 +14,9 @@ const searchDogs = async () => {
         let res = await axios.get(`https://dog.ceo/api/breed/${search}/images`)
         console.log(res)
         let filteredArr = res.data.message.filter((ele, i) => i < 5)
-        console.log(filteredArr)
+        // console.log(filteredArr)
         setDogs(filteredArr)
-        console.log(res.data) 
+        // console.log(res.data) 
     }catch(e){
         setMessage('This breed does not exist in our database')
     }
