@@ -19,7 +19,7 @@ const searchBeers = async () => {
         setMessage('This beer does not exist in our database')
     }
 }
-console.log(beer)
+// console.log(beer)
 
 
 const showBeers = () =>{
@@ -27,7 +27,7 @@ const showBeers = () =>{
         return(
             <div key={i}>
                 <h1>{eachBeer.name}</h1>
-                <img src={eachBeer.image_url} width='100px'/>
+                <img src={eachBeer.image_url} width='60px'/>
                 <p>{eachBeer.description}</p>
             </div>
         )
