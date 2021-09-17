@@ -3,28 +3,28 @@ import axios from 'axios'
 
 function NewBeer() {
   
-    let [name, setName] = useState("name");
-    let [tagline, setTagline] = useState("");
-    let [description, setDescription] = useState("");
-    let [firstBrewed, setFirstBrewed] = useState("");
-    let [brewerTips, setBrewerTips] = useState("");
-    let [attenuationLevel, setAttenuationLevel] = useState("");
-    let [contributedBy, setContributedBy] = useState("");
+    const [newBeer, setNewBeer] = useState({});
 
+    const handleSubmit =  async(e) => {
+        e.preventDefault()
+    try{
+
+        let res = await axios.post(`https://ih-beers-api2.herokuapp.com/beers/new`, newBeer)
+       console.log(res.data)
+
+    }catch(error){
+        console.log(error)
+    }
+    e.target.reset()
+    }
 
     const handleChange = (e) => {
-        // console.log(req)
-        // console.log(e.target.name)
-        e.target.name = e.target.value
-        setName(e.target.name)
+        let beer = {...newBeer}
+        beer[e.target.name] = e.target.value
+        setNewBeer(beer)
+       }
 
-    }
-    
-    const handleSubmit = async (req) => {
-      console.log(req)
-        let res = await axios.post(`https://ih-beers-api2.herokuapp.com/beers/new`, { name: name })
 
-    }
 
     return (
         <div>
