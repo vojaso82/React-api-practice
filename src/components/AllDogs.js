@@ -12,7 +12,7 @@ const [message, setMessage] = useState('')
 const searchDogs = async () => {
     try{
         let res = await axios.get(`https://dog.ceo/api/breed/${search}/images`)
-        console.log(res)
+        // console.log(res)
         let filteredArr = res.data.message.filter((ele, i) => i < 5)
         // console.log(filteredArr)
         setDogs(filteredArr)

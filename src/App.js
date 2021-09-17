@@ -3,6 +3,7 @@ import './App.css';
 import AllDogs from './components/AllDogs'
 import Beers from './components/Beers'
 import AllBeers from './components/AllBeers'
+import NewBeer from './components/NewBeer'
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <AllDogs/>
       <Beers/>
       <AllBeers/>
+      <NewBeer/>
     </div>
   );
 }
